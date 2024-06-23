@@ -1,0 +1,83 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2ywtue75ekva"]
+
+[ext_resource type="Script" path="res://local_menu.gd" id="1_d4mux"]
+[ext_resource type="Script" path="res://variant_list.gd" id="2_axcqq"]
+
+[node name="local_menu" type="Node2D"]
+script = ExtResource("1_d4mux")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(1100, 530)
+layout_direction = 1
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 1147.0
+offset_bottom = 644.0
+tab_alignment = 1
+
+[node name="Local Play" type="HFlowContainer" parent="TabContainer"]
+layout_direction = 1
+layout_mode = 2
+alignment = 1
+
+[node name="clock_options" type="OptionButton" parent="TabContainer/Local Play"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+alignment = 1
+item_count = 5
+popup/item_0/text = "No Clock"
+popup/item_0/id = 0
+popup/item_1/text = "Short Clock"
+popup/item_1/id = 1
+popup/item_2/text = "Medium Clock"
+popup/item_2/id = 2
+popup/item_3/text = "Long Clock"
+popup/item_3/id = 3
+popup/item_4/text = "Custom"
+popup/item_4/id = 4
+
+[node name="HFlowContainer" type="HFlowContainer" parent="TabContainer/Local Play"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/Local Play/HFlowContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+placeholder_text = "White Clock"
+alignment = 1
+caret_blink = true
+
+[node name="LineEdit2" type="LineEdit" parent="TabContainer/Local Play/HFlowContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+placeholder_text = "Black Clock"
+alignment = 1
+caret_blink = true
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Local Play"]
+layout_mode = 2
+text = "AI"
+
+[node name="variant list" type="ItemList" parent="TabContainer/Local Play"]
+custom_minimum_size = Vector2(1000, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_axcqq")
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Local Play"]
+layout_mode = 2
+
+[node name="Join Lobby" type="MarginContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Create Lobby" type="MarginContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
